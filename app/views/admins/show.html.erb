@@ -38,7 +38,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center">
-                    <!-- <%= image_tag(@user.foto, :alt => "Foto do Usuário", :class => "user-image img-responsive" ) %> -->
                     <!-- <img src="assets/imgages/find_user.png" class="user-image img-responsive"/> -->
                     </li>
                     <li>
@@ -126,33 +125,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <%=@user.aniversario.day %> de 
-                            <% case @user.aniversario.month %>
-                                <% when 1 %>
-                                    <%="Janeiro" %>
-                                <% when 2 %>
-                                    <%="Fevereiro" %>
-                                <% when 3 %>
-                                    <%="Março" %>
-                                <% when 4 %>
-                                    <%="Abril" %>
-                                <% when 5 %>
-                                    <%="Maio" %>
-                                <% when 6 %>
-                                    <%="Junho" %>
-                                <% when 7 %>
-                                    <%="Julho" %>
-                                <% when 8 %>
-                                    <%="Agosto" %>
-                                <% when 9 %>
-                                    <%="Setembro" %>
-                                <% when 10%>
-                                    <%="Outubro" %>
-                                <% when 11 %>
-                                    <%="Novembro" %>
-                                <% when 12 %>
-                                    <%="Dezembro" %>
-                            <%end%>
+                            
                         </div> <!-- fim col esquerda -->
                     </th>
                 </tr>
@@ -176,9 +149,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <%x = 'http://' %>
-                            <%x = x+@user.fb%>
-                            <%= link_to "Link", x, :target => "_blank" %>
+                            
                         </div>
                     </th>
                 </tr>
@@ -190,10 +161,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <% x = "https://github.com/"%>
-                            <% x = x+@user.github %>
-                            <% x = x.delete"@"%>
-                            <%= link_to @user.github, x, :target => "_blank" %>  
+                            
                         </div>
                     </th>
                 </tr>
@@ -205,10 +173,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <% x = "https://trello.com/"%>
-                            <% x = x+@user.trello %>
-                            <% x = x.delete"@"%>
-                            <%= link_to @user.trello, x, :target => "_blank" %>
+                            
                         </div>
                     </th>
                 </tr>
@@ -225,7 +190,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <%= @user.nivel %>
+                          
                         </div>
                     </th>
                 </tr>
@@ -237,7 +202,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <%= @user.pontuacao %>
+                           
                         </div>
                     </th>
                 </tr>
@@ -249,13 +214,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </th>
                     <th>
                         <div class="col_direita">
-                            <% @x = 0  %>
-                            <% @prox = 0 %>
-                            <% until @x >= @user.nivel do %>
-                                <% @x = @x+1 %>
-                                <% @prox = @prox+ (@x*1000) %>
-                            <% end %>
-                            <%= @prox %>
+                        
                         </div>
                     </th>
                 </tr>
@@ -265,44 +224,105 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         
                 </div>
                 <div class="barraExp">
-                    <% @pix = 26*@user.pontuacao %>
-                    <% @pix = @pix/(@prox) %>
-                    <% @pix.round %>
-                    <% @cont = 1 %>
-                    <% until @cont >= @pix do %>
-                            <% @cont = @cont+1 %>
+                    
                             <div class="barraExp" id="preenche"></div>
-                    <% end %>
-                    <% until @cont >= 26 do %>
-                            <% @cont = @cont+1 %>
+                    
                             <div class="barraExp" id="vazio"></div>
-                    <% end %>
                 </div>
                 <div class="espacoBarra">
                         
                 </div>
             </div>
         </div>
-        <div class="bloco">
-            <table class="tabela">
-                <tr>
-                    <th>
-                        <div class="col_esquerda">
-                            Advertências:
-                        </div>
-                    </th>
-                    <th>
-                        <div class="col_direita">
-                            <%= @user.advertencias %>
-                        </div>
-                    </th>
-                </tr>
-            </table>
-        </div>
     </div> <!-- FIM DadosEXp -->
+
+    <!-- Conquistas -->
     <div class="conquistas">
         <h4>Conquistas</h4>
+    </div> <!-- Fim Conquistas -->
+    
+    <!-- Listagem de Membros -->
+    <div class="caixaDados">
+        <table class ="tabela">
+                <tr>
+                    <th><h4>Gerenciamento dos Membros</h4></th>
+                    <th><%= link_to 'Novo Membro', controller: 'membros', action: 'new'%></th>
+                </tr>
+        </table>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @membros.each do |membro| %>
+                <tr>
+                    <td><%= membro.name %></td>
+                    <td><%= membro.email %></td>
+    
+                    <td>
+                        <%= link_to 'Mostrar', controller: 'membros', action: 'show', id: membro %>
+                    </td>
+     
+                    <td>
+                        <%= link_to 'Editar', controller: 'membros', action: 'edit', id: membro  %>
+                    </td>
+
+                    <td>
+                        <%= link_to 'Deletar', {controller: 'membros', action: 'destroy', id: membro},
+                         {method: "delete"} %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div> <!-- Fim Listagem de Membros -->
+                                           <!-- NAO CONSIGUI SEPARAR ESSAS DIVS -->
+    <!-- Mostrar Advertências -->
+    <div class="caixaDados">
+        <table class ="tabela">
+                <tr>
+                    <th><h4>Advertências</h4></th>
+                    <th><%= link_to 'Nova Advertência', controller: 'advertencias', action: 'new'%></th>
+                </tr>
+        </table>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descricao</th>
+                    <th>Membro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @advertencias.each do |advertencia| %>
+                <tr>
+                    <td><%= advertencia.advdata %></td>
+                    <td><%= advertencia.reason %></td>
+                    <td><%= advertencia.membro.name%></td>
+  
+                    <td>
+                        <%= link_to 'Mostrar', controller: 'advertencias', action: 'show', id: advertencia %>
+                    </td>
+    
+                    <td>
+                        <%= link_to 'Editar', controller: 'advertencias', action: 'edit', id: advertencia%>
+                    </td>
+
+                    <td>
+                        <%= link_to 'Deletar', {controller: 'advertencias', action: 'destroy', id: advertencia},
+                         {method: "delete"}  %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
+
     <!-- FIM TESTE -->
              <!-- /. PAGE INNER  -->
             </div>
