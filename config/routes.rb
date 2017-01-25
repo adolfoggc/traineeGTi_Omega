@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :admins
+  resources :admins
   resources :advertencias
   devise_for :views
   devise_for :users
 
   resources :membros
+
+
 
   #root to: 'membros#index'
   

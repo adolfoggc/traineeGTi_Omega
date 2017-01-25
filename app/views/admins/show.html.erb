@@ -1,0 +1,347 @@
+<!--<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> -->
+<!-- view individual de admin -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Binary Admin</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/stylesheets/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="assets/stylesheets/font-awesome.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+    <link href="assets/javascripts/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="assets/stylesheets/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">GTi Jr.</a> 
+            </div>
+  <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+        </nav>   
+           <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                    <!-- <img src="assets/imgages/find_user.png" class="user-image img-responsive"/> -->
+                    </li>
+                    <li>
+                        
+                       <!-- <a class="active-menu"  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Perfil</a> -->
+                        
+                        <a class="active-menu">
+                            <i class="fa fa-dashboard fa-3x"></i> 
+                            <%= link_to 'Perfil', admin_session_path, :class => "active-menu" %> 
+                        </a>
+
+
+                    </li>
+                    <!--
+                    <li>
+                        <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+                    </li>
+                    <li>
+                        <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
+                    </li>
+                           <li  >
+                        <a   href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+                    </li>   
+                      <li  >
+                        <a  href="table.html"><i class="fa fa-table fa-3x"></i> Table Examples</a>
+                    </li>
+                    <li  >
+                        <a  href="form.html"><i class="fa fa-edit fa-3x"></i> Forms </a>
+                    </li>               
+                    
+                                       
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+
+                                </ul>
+                               
+                            </li>
+                        </ul>
+                      </li>  
+                    <li>
+                        <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                    </li>   -->
+                </ul> 
+            </div>
+        </nav>  
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2><%= @admin.name %></h2>  
+                    </div>
+                </div>              
+                 <!-- /. ROW  -->
+                <hr/> <!-- DIVISÓRIA -->
+    <!-- coluna -->
+    <div class="caixaDados">
+        <div class="bloco" >
+        <!-- dados -->
+            <table class ="tabela">
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Aniversário:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                            
+                        </div> <!-- fim col esquerda -->
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            E-mail:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                            <%= @admin.email %>
+                        </div>
+                    </th> <!--páginas poderiam ser hyperlinks -->
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Facebook:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                            
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Github:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                            
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Trello:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                            
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <!-- bloco -->
+        <div class="bloco">
+            <table class ="tabela">
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Nível:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                          
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Experiência:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                           
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="col_esquerda">
+                            Próx Nível:
+                        </div>
+                    </th>
+                    <th>
+                        <div class="col_direita">
+                        
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <div class="expArea">
+                <div class="espacoBarra">
+                        
+                </div>
+                <div class="barraExp">
+                    
+                            <div class="barraExp" id="preenche"></div>
+                    
+                            <div class="barraExp" id="vazio"></div>
+                </div>
+                <div class="espacoBarra">
+                        
+                </div>
+            </div>
+        </div>
+    </div> <!-- FIM DadosEXp -->
+
+    <!-- Conquistas -->
+    <div class="conquistas">
+        <h4>Conquistas</h4>
+    </div> <!-- Fim Conquistas -->
+    
+    <!-- Listagem de Membros -->
+    <div class="caixaDados">
+        <table class ="tabela">
+                <tr>
+                    <th><h4>Gerenciamento dos Membros</h4></th>
+                    <th><%= link_to 'Novo Membro', controller: 'membros', action: 'new'%></th>
+                </tr>
+        </table>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @membros.each do |membro| %>
+                <tr>
+                    <td><%= membro.name %></td>
+                    <td><%= membro.email %></td>
+    
+                    <td>
+                        <%= link_to 'Mostrar', controller: 'membros', action: 'show', id: membro %>
+                    </td>
+     
+                    <td>
+                        <%= link_to 'Editar', controller: 'membros', action: 'edit', id: membro  %>
+                    </td>
+
+                    <td>
+                        <%= link_to 'Deletar', {controller: 'membros', action: 'destroy', id: membro},
+                         {method: "delete"} %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div> <!-- Fim Listagem de Membros -->
+                                           <!-- NAO CONSIGUI SEPARAR ESSAS DIVS -->
+    <!-- Mostrar Advertências -->
+    <div class="caixaDados">
+        <table class ="tabela">
+                <tr>
+                    <th><h4>Advertências</h4></th>
+                    <th><%= link_to 'Nova Advertência', controller: 'advertencias', action: 'new'%></th>
+                </tr>
+        </table>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descricao</th>
+                    <th>Membro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% @advertencias.each do |advertencia| %>
+                <tr>
+                    <td><%= advertencia.advdata %></td>
+                    <td><%= advertencia.reason %></td>
+                    <td><%= advertencia.membro.name%></td>
+  
+                    <td>
+                        <%= link_to 'Mostrar', controller: 'advertencias', action: 'show', id: advertencia %>
+                    </td>
+    
+                    <td>
+                        <%= link_to 'Editar', controller: 'advertencias', action: 'edit', id: advertencia%>
+                    </td>
+
+                    <td>
+                        <%= link_to 'Deletar', {controller: 'advertencias', action: 'destroy', id: advertencia},
+                         {method: "delete"}  %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FIM TESTE -->
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/javascripts/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/javascripts/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/javascripts/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="assets/javascripts/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/javascripts/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/javascripts/custom.js"></script>
+    
+   
+</body>
+</html>
